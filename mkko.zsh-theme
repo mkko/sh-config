@@ -15,4 +15,12 @@ vcs_status() {
     fi
 }
 
-PROMPT='%2~ $(vcs_status)%%%b '
+path_color() {
+    if [[ "$MKKO_ZSH_PROMPT_FG" != "" ]]; then
+        echo '$FG['"$MKKO_ZSH_PROMPT_FG"']'
+    else
+        echo "%{$fg[blue]%}"
+    fi
+}
+
+PROMPT="$(path_color)"'%2~%{$reset_color%} $(vcs_status)%%%b '
