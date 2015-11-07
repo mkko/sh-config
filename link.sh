@@ -45,3 +45,11 @@ else
 
     echo "Included Git aliases to .gitconfig"
 fi
+
+if [ -r "$HOME/.emacs" ]; then
+    echo 'WARN: .emacs exists, skipping'
+else
+    ln -s $BASEDIR/emacs $HOME/.emacs
+    echo "Linked .emacs"
+fi
+    
