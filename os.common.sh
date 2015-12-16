@@ -22,6 +22,9 @@ alias vi='vim'
 
 alias h='history | grep'
 
+alias pjson='python -m json.tool'
+
+
 # General file handling
 function archive_7z() {
 	[ "$#" -lt 2 ] && 7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on ${1%/}-`date +%Y-%m-%d-%H%M`.7z $1
