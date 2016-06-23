@@ -6,12 +6,17 @@ alias irc='ssh -t -l mkko vapaakoodarit.fi "cd /home/mkko && exec screen -d -r i
 ### Git ###
 
 alias groot='cd $(git rev-parse --show-toplevel)'
-alias gff='git flow feature'
-alias gfr='git flow release'
 alias gaa='git add -A'
 
-alias buildnum="git rev-list head |wc -l"
 alias snap='g ci -m wip'
+
+# USAGE: buildnum [commit]
+# Counts the number of preceeding commits for the given argument.
+# Without arguments uses HEAD.
+function buildnum() {
+    HASH=${1:-"head"}
+    git rev-list $HASH | wc -l
+}
 
 # Misc
 alias untar='tar -xzvf'
@@ -29,3 +34,4 @@ alias pjson='python -m json.tool'
 function archive_7z() {
 	[ "$#" -lt 2 ] && 7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on ${1%/}-`date +%Y-%m-%d-%H%M`.7z $1
 }
+
