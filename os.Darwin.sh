@@ -2,7 +2,7 @@ BASEDIR=$(dirname $0)
 . "$BASEDIR/os.common.sh"
 
 export EDITOR='mate -w'
-export REACT_EDITOR='mate'
+export REACT_EDITOR='code'
 
 alias wget="curl -O"
 alias hey="while ((1)) { say hey; }"
