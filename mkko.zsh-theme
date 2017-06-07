@@ -19,7 +19,7 @@ path_color() {
     if [[ "$MKKO_ZSH_PROMPT_FG" != "" ]]; then
         echo '$FG['"$MKKO_ZSH_PROMPT_FG"']'
     else
-        echo "%{$fg[blue]%}"
+        echo "%{$fg[white]%}"
     fi
 }
 
