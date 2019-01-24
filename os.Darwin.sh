@@ -12,6 +12,8 @@ alias lb="open -a LaunchBar"
 
 alias pbjson="pbpaste | python -m json.tool"
 
+alias simrec="xcrun simctl io booted recordVideo"
+
 # Use Homebrew's PostgreSQL
 # Disable psql paging
 alias psql='/usr/local/bin/psql'
@@ -36,3 +38,6 @@ openInLaunchBar() {
     fi
 }
 alias lb=openInLaunchBar
+
+# React native debugger
+export REACT_DEBUGGER="rndebugger-open --open --port 8081"
